@@ -1,6 +1,7 @@
 const tituloDaHome = document.getElementById("title-home")
+// console.log('tituloDahome', tituloDhome)
 
-tituloDaHome.innerHTML = "Daniel"
+tituloDaHome.innerHTML = "Tarcísio"
 tituloDaHome.style.color = "#c2c2c2"
 tituloDaHome.setAttribute("style", "color: #101010; font-size: 80px")
 
@@ -20,7 +21,7 @@ const temAClasseCard = document.querySelectorAll('.card')
 console.log('classe card', temAClasseCard)
 
 buttonHome.addEventListener('click', () => {
-    tituloDaHome.innerHTML = "Daniel Ventura"
+    tituloDaHome.innerHTML = "Tarcísio Alves"
     temAClasseCard[2].setAttribute('style', 'background-color: red')
     // classBg2.classList.toggle('red')
     // for (let index = 0; index < temAClasseCard.length; index++) {
