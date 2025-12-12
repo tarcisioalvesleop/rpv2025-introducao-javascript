@@ -5,7 +5,7 @@ const spanElement = document.createElement('span')
 
 const bodyElement = document.querySelector('body')
 
-h1Element.innerHTML = "Tarcísio Alves"  //adicionando valor ao elemento
+h1Element.innerHTML = "Tarcísio Alves Bertolino"  //adicionando valor ao elemento
 pElement.innerHTML = "Desenvolvedor"
 spanElement.innerHTML = "Cataguases - MG"
 
@@ -25,4 +25,34 @@ mainElement.appendChild(pElement)
 mainElement.appendChild(spanElement)
 
 
-// console.log(body)
+function resetarCoresDeFundoPadrao(corPadrao){ //função para reduzir o
+    cardFiat.style.backgroundColor = corPadrao
+    cardFerrari.style.backgroundColor = corPadrao
+    cardJeep.style.backgroundColor = corPadrao
+    cardRam.style.backgroundColor = corPadrao
+}
+
+const cardFiat = document.getElementById("fiat")
+const cardFerrari = document.getElementById("ferrari")
+const cardJeep = document.getElementById("jeep")
+const cardRam = document.getElementById("ram")
+
+cardFiat.addEventListener('click', () => {
+    resetarCoresDeFundoPadrao('#202020')
+    cardFiat.style.backgroundColor = 'red'    
+})
+
+cardFerrari.addEventListener('click', () => {
+    resetarCoresDeFundoPadrao('#202020')
+    cardFerrari.style.backgroundColor = 'red'
+})
+
+cardJeep.addEventListener('click', () => {
+    resetarCoresDeFundoPadrao('#202020')
+    cardJeep.style.backgroundColor = 'red'
+})
+
+cardRam.addEventListener('click', () => {
+    resetarCoresDeFundoPadrao('#202020')
+    cardRam.style.backgroundColor = 'red'
+})
