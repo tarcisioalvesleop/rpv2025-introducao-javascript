@@ -1,35 +1,59 @@
-const mainElement = document.createElement('main') //criação do elemento
+const mainElement = document.createElement('main')
 const h1Element = document.createElement('h1')
 const pElement = document.createElement('p')
 const spanElement = document.createElement('span')
 
 const bodyElement = document.querySelector('body')
 
-h1Element.innerHTML = "Tarcísio Alves Bertolino"  //adicionando valor ao elemento
+h1Element.innerHTML = "Daniel Ventura de Almeida"
 pElement.innerHTML = "Desenvolvedor"
 spanElement.innerHTML = "Cataguases - MG"
 
-mainElement.style.display = 'flex'  //colocando estilo no mainElement
-mainElement.style.flexDirection = 'center'
+mainElement.classList.add('flex', 'flex-col', 'gap-4')
 
-mainElement.classList.add('flex', 'flex-col', 'gap-4') //adicionando as classes do css
-
-h1Element.style.fontSize = '2.4rem'  
+h1Element.style.fontSize = '2.4rem'
 pElement.style.fontSize = '1.8rem'
 spanElement.style.fontSize = '1.4rem'
 
-//criando os elemento posicionado em tela
 bodyElement.appendChild(mainElement)
 mainElement.appendChild(h1Element)
 mainElement.appendChild(pElement)
 mainElement.appendChild(spanElement)
 
+function digaOla() {
+    alert('Olá, seja bem-vindo !')
+}
 
-function resetarCoresDeFundoPadrao(corPadrao){ //função para reduzir o
-    cardFiat.style.backgroundColor = corPadrao
-    cardFerrari.style.backgroundColor = corPadrao
-    cardJeep.style.backgroundColor = corPadrao
-    cardRam.style.backgroundColor = corPadrao
+function selecaoFiat() {
+    alert('Olá, você selecionou o Fiat.')
+}
+
+function resetarCoresDeFundoPadrao(){
+    cardFiat.classList.add('padrao')
+    cardFerrari.classList.add('padrao')
+    cardJeep.classList.add('padrao')
+    cardRam.classList.add('padrao')
+}
+
+function alteraCardAtivo(botaoClicado){
+    const todosOsCardsAtivos = document.getElementsByClassName('ativo')
+    for (let index = 0; index < todosOsCardsAtivos.length; index++) {
+        todosOsCardsAtivos[index].classList.remove('ativo')
+    }
+    const cardClicado = document.getElementById(botaoClicado)
+    cardClicado.classList.remove('padrao')
+    const estaAtivo = cardClicado.classList.contains('ativo')
+        ? cardClicado.classList.remove('ativo')
+        : cardClicado.classList.add('ativo')
+    
+    // if(estaAtivo){
+    //     return cardClicado.classList.remove('ativo')
+    // }
+    
+    // // console.log('cardClicado', cardClicado.classList['value'])
+    // // console.log('cardClicado', cardClicado)
+    // cardClicado.classList.add('ativo')
+
 }
 
 const cardFiat = document.getElementById("fiat")
@@ -38,21 +62,25 @@ const cardJeep = document.getElementById("jeep")
 const cardRam = document.getElementById("ram")
 
 cardFiat.addEventListener('click', () => {
-    resetarCoresDeFundoPadrao('#202020')
-    cardFiat.style.backgroundColor = 'red'    
+    resetarCoresDeFundoPadrao()
+    alteraCardAtivo('fiat')
+    // cardFiat.style.backgroundColor = 'red'
 })
 
 cardFerrari.addEventListener('click', () => {
-    resetarCoresDeFundoPadrao('#202020')
-    cardFerrari.style.backgroundColor = 'red'
+    resetarCoresDeFundoPadrao()
+    alteraCardAtivo('ferrari')
+    // cardFerrari.style.backgroundColor = 'red'
 })
 
 cardJeep.addEventListener('click', () => {
-    resetarCoresDeFundoPadrao('#202020')
-    cardJeep.style.backgroundColor = 'red'
+    resetarCoresDeFundoPadrao()
+    alteraCardAtivo('jeep')
+    // cardJeep.style.backgroundColor = 'red'
 })
 
 cardRam.addEventListener('click', () => {
-    resetarCoresDeFundoPadrao('#202020')
-    cardRam.style.backgroundColor = 'red'
+    resetarCoresDeFundoPadrao()
+    alteraCardAtivo('ram')
+    // cardRam.style.backgroundColor = 'red'
 })
